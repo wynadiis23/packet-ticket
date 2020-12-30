@@ -30,32 +30,32 @@ class UserController extends Controller
     /**
      * store the request data to database
      */
-    public function store(Request $request)
-    {
-        try {
-            $validator = $this->validateUser();
+    // public function store(Request $request)
+    // {
+    //     try {
+    //         $validator = $this->validateUser();
 
-            if($validator->fails()) {
-                return $this->errorResponse($validator->messages(), 422);
-            }
+    //         if($validator->fails()) {
+    //             return $this->errorResponse($validator->messages(), 422);
+    //         }
     
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($request->password),
-                'role' => $request->role
-            ]);
+    //         $user = User::create([
+    //             'name' => $request->name,
+    //             'email' => $request->email,
+    //             'password' => bcrypt($request->password),
+    //             'role' => $request->role
+    //         ]);
     
-            return $this->successResponse($user, 'User Successfully created', 201);
+    //         return $this->successResponse($user, 'User Successfully created', 201);
 
-        } catch(Exception $error) {
-            return response()->json([
-                'message' => 'error occured',
-                'data' => $error
-            ]);
-        }
+    //     } catch(Exception $error) {
+    //         return response()->json([
+    //             'message' => 'error occured',
+    //             'data' => $error
+    //         ]);
+    //     }
         
-    }
+    // }
 
     /**
      * show user by id
