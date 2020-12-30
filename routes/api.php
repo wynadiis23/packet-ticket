@@ -18,9 +18,9 @@ use App\Http\Controllers\AuthController;
 Route::post('/login', [AuthController::class, 'login']); //created user get token here
 Route::post('/register', [AuthController::class, 'register']); //create user here
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 Route::middleware(['auth:sanctum'])->group(function() {
     Route::resource('/users', UserController::class);    
 
