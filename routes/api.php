@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::post('/register', [AuthController::class, 'register']); //create user her
 //     return $request->user();
 // });
 Route::middleware(['auth:sanctum'])->group(function() {
+    //user route
     Route::resource('/users', UserController::class);    
 
     //get user id
@@ -31,4 +33,6 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::get('/logout', [AuthController::class, 'logout']);
 });
 
+//customer route
+Route::resource('/customers', CustomerController::class);
 // Route::resource('/users', UserController::class);
