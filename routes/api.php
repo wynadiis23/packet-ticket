@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PacketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,10 @@ Route::post('/register', [AuthController::class, 'register']); //create user her
 // });
 Route::middleware(['auth:sanctum'])->group(function() {
     //user route
-    Route::resource('/users', UserController::class);    
+    Route::resource('/users', UserController::class);  
+    
+    //packet route
+    Route::resource('/packets', PacketController::class);  
 
     //get user id
     Route::get('/isloggin', [AuthController::class, 'isLoggin']);
