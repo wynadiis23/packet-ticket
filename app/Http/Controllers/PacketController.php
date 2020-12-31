@@ -45,6 +45,9 @@ class PacketController extends Controller
           //get customer id. fetch all customer. but now we doing it manually by assigning it ehehe
           $customer_id = 20;
 
+          //get customer email
+          $customer_email = Customer::findOrFail($customer_id)->email;
+          
           $packet = Packet::create([
               'name' => $request->name,
               'ket' => $request->ket,
@@ -75,5 +78,17 @@ class PacketController extends Controller
             // 'user_id' => 'required',
             // 'customer_id' => 'required'
         ]);
+    }
+    /**
+     * test`
+     */
+    public function getEmail() 
+    {
+        $customer_id = 20;
+        $customer = Customer::findOrFail($customer_id);
+
+        $customer_email = $customer->email;
+
+        return response()->json($customer_email, 200);
     }
 }
