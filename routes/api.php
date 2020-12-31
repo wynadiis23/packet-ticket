@@ -23,6 +23,10 @@ Route::post('/register', [AuthController::class, 'register']); //create user her
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+//testing
+Route::get('/getemail', [PacketController::class, 'getEmail']);
+
 Route::middleware(['auth:sanctum'])->group(function() {
     //user route
     Route::resource('/users', UserController::class);  
