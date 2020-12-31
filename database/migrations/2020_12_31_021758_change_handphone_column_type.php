@@ -28,7 +28,7 @@ class ChangeHandphoneColumnType extends Migration
     {
         Schema::table('customers', function (Blueprint $table) {
             //
-            Schema::drop('flights');
+            Schema::drop('customers');
         });
     }
 }
