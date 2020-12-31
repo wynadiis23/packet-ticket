@@ -10,5 +10,8 @@ use App\Traits\ApiResponser;
 
 class Controller extends BaseController
 {
+    /**
+     * ApiResponser inheret to all controller based on class Controller
+     */
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ApiResponser;
 }
