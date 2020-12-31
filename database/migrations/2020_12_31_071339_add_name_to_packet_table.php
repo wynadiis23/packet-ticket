@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeHandphoneColumnType extends Migration
+class AddNameToPacketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class ChangeHandphoneColumnType extends Migration
      */
     public function up()
     {
-        Schema::table('customers', function (Blueprint $table) {
+        Schema::table('packets', function (Blueprint $table) {
             //
-            $table->string('handphone', 13)->change();
+            $table->string('name');
+            $table->string('ket');
         });
     }
 
@@ -26,9 +27,9 @@ class ChangeHandphoneColumnType extends Migration
      */
     public function down()
     {
-        Schema::table('customers', function (Blueprint $table) {
+        Schema::table('packets', function (Blueprint $table) {
             //
-            Schema::drop('customers');
+            Schema::drop('packets');
         });
     }
 }

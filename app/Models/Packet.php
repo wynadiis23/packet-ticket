@@ -17,6 +17,8 @@ class Packet extends Model
     protected $table = 'packets';
 
     protected $fillable = [
+        'name',
+        'ket',
         'tgl_dtg',
         'tgl_ambl',
         'status',
