@@ -23,6 +23,10 @@ class SendMail extends Mailable
     public function __construct($title, $customer_detail, $packet_detail)
     {
         //
+        /**
+         * properties untuk email yang dikirim
+         * opsi pengubahan atau setting smtp ada di file .env
+         */
         $this->title = $title;
         $this->customer_detail= $customer_detail;
         $this->packet_detail = $packet_detail;
