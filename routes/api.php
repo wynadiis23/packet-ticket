@@ -32,7 +32,10 @@ Route::middleware(['auth:sanctum'])->group(function() {
     Route::resource('/users', UserController::class);  
     
     //packet route
+    Route::post('/packets/setPacketStatus', [PacketController::class, 'setPacketStatus']);
     Route::resource('/packets', PacketController::class);  
+    Route::get('/sendEmail', [PacketController::class], 'sendEmail');
+    
 
     //get user id
     Route::get('/isloggin', [AuthController::class, 'isLoggin']);
